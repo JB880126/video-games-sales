@@ -1,7 +1,8 @@
 import pandas as pd
 import region_performance
 import top_gaming_consoles
-
+import gaming_genre
+import old_game_release
 def main_menu():
     # Preload dataset
     df=pd.read_csv("content/vgsales.csv")
@@ -54,9 +55,9 @@ def main_menu():
     elif user_choice == TOP_REGIONAL_GAMES_CHOICE:
         visualise_top_regional_games()
     elif user_choice == GAMES_OLD_RELEASES_CHOICE:
-        visualise_games_old_releases()
+        old_game_release.visualise_games_old_releases(df)
     elif user_choice == GAMING_GENRES_CHOICE:
-        visualise_gaming_genres()
+        gaming_genre.visualise_gaming_genres(df)
     elif user_choice == PUBLISHER_IMPACT_CHOICE:
         visualise_publisher_impact_on_regions()
     elif user_choice == GLOBAL_AVERAGE_CHOICE:
@@ -71,9 +72,6 @@ def visualise_top_regional_games():
     pass
 
 def visualise_games_old_releases():
-    pass
-
-def visualise_gaming_genres():
     pass
 
 def visualise_publisher_impact_on_regions():
