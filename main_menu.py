@@ -1,4 +1,14 @@
+import pandas as pd
+import region_performance
+
 def main_menu():
+    # Preload dataset
+    df=pd.read_csv("content/vgsales.csv")
+    df.head()
+
+    # Named constants for readability
+    # Capital case for constants according to variable naming conventions
+    # "CHOICE" written at the end of each constant name as a naming convention
     REGION_PERFORMANCE_CHOICE = 0
     TOP_GAMING_CONSOLES_CHOICE = 1
     TOP_GLOBAL_GAMES_CHOICE = 2
@@ -35,7 +45,7 @@ def main_menu():
                 break
     
     if user_choice == REGION_PERFORMANCE_CHOICE:
-        visualise_region_performance()
+        region_performance.visualise_region_performance(df)
     elif user_choice == TOP_GAMING_CONSOLES_CHOICE:
         visualise_top_gaming_consoles()
     elif user_choice == TOP_GLOBAL_GAMES_CHOICE:
@@ -53,9 +63,6 @@ def main_menu():
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.
-def visualise_region_performance():
-    pass
-
 def visualise_top_gaming_consoles():
     pass
 
