@@ -36,3 +36,4 @@ def visualise_region_performance(df):
     bar1.update_layout(title_text='Region with highest sales on an average')
     bar1.update_xaxes(title='Average Sales')
     bar1.update_yaxes(title='Regions')
+    bar1.show()
