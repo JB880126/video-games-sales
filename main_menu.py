@@ -1,5 +1,6 @@
 import pandas as pd
 import region_performance
+import top_gaming_consoles
 
 def main_menu():
     # Preload dataset
@@ -47,7 +48,7 @@ def main_menu():
     if user_choice == REGION_PERFORMANCE_CHOICE:
         region_performance.visualise_region_performance(df)
     elif user_choice == TOP_GAMING_CONSOLES_CHOICE:
-        visualise_top_gaming_consoles()
+        top_gaming_consoles.visualise_top_gaming_consoles(df)
     elif user_choice == TOP_GLOBAL_GAMES_CHOICE:
         visualise_top_global_games()
     elif user_choice == TOP_REGIONAL_GAMES_CHOICE:
@@ -63,9 +64,6 @@ def main_menu():
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.
-def visualise_top_gaming_consoles():
-    pass
-
 def visualise_top_global_games():
     pass
 
