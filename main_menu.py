@@ -1,8 +1,9 @@
 import pandas as pd
 import region_performance
 import top_gaming_consoles
-import gaming_genre
-import old_game_release
+import top_global_games
+import top_regional_games
+
 def main_menu():
     # Preload dataset
     df=pd.read_csv("content/vgsales.csv")
@@ -14,11 +15,11 @@ def main_menu():
     REGION_PERFORMANCE_CHOICE = 0
     TOP_GAMING_CONSOLES_CHOICE = 1
     TOP_GLOBAL_GAMES_CHOICE = 2
-    TOP_REGIONAL_GAMES_CHOICE = 2
-    GAMES_OLD_RELEASES_CHOICE = 3
-    GAMING_GENRES_CHOICE = 4
-    PUBLISHER_IMPACT_CHOICE = 5
-    GLOBAL_AVERAGE_CHOICE = 6
+    TOP_REGIONAL_GAMES_CHOICE = 3
+    GAMES_OLD_RELEASES_CHOICE = 4
+    GAMING_GENRES_CHOICE = 5
+    PUBLISHER_IMPACT_CHOICE = 6
+    GLOBAL_AVERAGE_CHOICE = 7
 
     CHOICE_MINIMUM = 0
     CHOICE_MAXIMUM = 8
@@ -51,9 +52,9 @@ def main_menu():
     elif user_choice == TOP_GAMING_CONSOLES_CHOICE:
         top_gaming_consoles.visualise_top_gaming_consoles(df)
     elif user_choice == TOP_GLOBAL_GAMES_CHOICE:
-        visualise_top_global_games()
+        top_global_games.visualise_top_global_games(df)
     elif user_choice == TOP_REGIONAL_GAMES_CHOICE:
-        visualise_top_regional_games()
+        top_regional_games.visualise_top_regional_games(df)
     elif user_choice == GAMES_OLD_RELEASES_CHOICE:
         old_game_release.visualise_games_old_releases(df)
     elif user_choice == GAMING_GENRES_CHOICE:
@@ -65,12 +66,6 @@ def main_menu():
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.
-def visualise_top_global_games():
-    pass
-
-def visualise_top_regional_games():
-    pass
-
 def visualise_games_old_releases():
     pass
 
