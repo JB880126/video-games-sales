@@ -24,11 +24,11 @@ def main_menu():
     GAMING_GENRES_CHOICE = 5
     PUBLISHER_IMPACT_CHOICE = 6
     GLOBAL_AVERAGE_CHOICE = 7
+    EXIT_CHOICE = 8
 
     CHOICE_MINIMUM = 0
-    CHOICE_MAXIMUM = 8
+    CHOICE_MAXIMUM = 9
     choices = tuple(range(CHOICE_MINIMUM, CHOICE_MAXIMUM))
-    print(choices)
 
     while (1):
         print("1. Visualise region performance")
@@ -39,6 +39,7 @@ def main_menu():
         print("6. Visualise top gaming genres")
         print("7. Visualise publisher impact on regions")
         print("8. Visualise global averages")
+        print("9. Exit program")
         print()
         user_choice = input("Which choice do you want to pick? ")
         try:
@@ -48,25 +49,27 @@ def main_menu():
         else:
             if user_choice not in choices:
                 print("Invalid choice! Please pick from the selection...")
-            else:
-                break
-    
-    if user_choice == REGION_PERFORMANCE_CHOICE:
-        region_performance.visualise_region_performance(df)
-    elif user_choice == TOP_GAMING_CONSOLES_CHOICE:
-        top_gaming_consoles.visualise_top_gaming_consoles(df)
-    elif user_choice == TOP_GLOBAL_GAMES_CHOICE:
-        top_global_games.visualise_top_global_games(df)
-    elif user_choice == TOP_REGIONAL_GAMES_CHOICE:
-        top_regional_games.visualise_top_regional_games(df)
-    elif user_choice == GAMES_OLD_RELEASES_CHOICE:
-        old_game_release.visualise_games_old_releases(df)
-    elif user_choice == GAMING_GENRES_CHOICE:
-        gaming_genre.visualise_gaming_genres(df)
-    elif user_choice == PUBLISHER_IMPACT_CHOICE:
-        publisher_impact_on_regions.visualise_publisher_impact_on_regions(df)
-    elif user_choice == GLOBAL_AVERAGE_CHOICE:
-        global_average.visualise_global_average(df)
+                continue
+
+        if user_choice == REGION_PERFORMANCE_CHOICE:
+            region_performance.visualise_region_performance(df)
+        elif user_choice == TOP_GAMING_CONSOLES_CHOICE:
+            top_gaming_consoles.visualise_top_gaming_consoles(df)
+        elif user_choice == TOP_GLOBAL_GAMES_CHOICE:
+            top_global_games.visualise_top_global_games(df)
+        elif user_choice == TOP_REGIONAL_GAMES_CHOICE:
+            top_regional_games.visualise_top_regional_games(df)
+        elif user_choice == GAMES_OLD_RELEASES_CHOICE:
+            old_game_release.visualise_games_old_releases(df)
+        elif user_choice == GAMING_GENRES_CHOICE:
+            gaming_genre.visualise_gaming_genres(df)
+        elif user_choice == PUBLISHER_IMPACT_CHOICE:
+            publisher_impact_on_regions.visualise_publisher_impact_on_regions(df)
+        elif user_choice == GLOBAL_AVERAGE_CHOICE:
+            global_average.visualise_global_average(df)
+        elif user_choice == EXIT_CHOICE:
+            print("Exiting program...")
+            exit()
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.

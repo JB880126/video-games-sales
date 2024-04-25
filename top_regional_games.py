@@ -5,7 +5,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import warnings
 warnings.filterwarnings("ignore")
-print("The modules are imported")
 
 def visualise_top_regional_games(df):
     print(df)

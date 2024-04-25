@@ -4,7 +4,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import warnings
 warnings.filterwarnings("ignore")
-print("The modules are imported")
 
 def visualise_top_global_games(df):
     top = pd.DataFrame(df.groupby("Name")[["Global_Sales"]].sum().sort_values(by=['Global_Sales'],ascending=[False]).reset_index())
