@@ -3,6 +3,10 @@ import region_performance
 import top_gaming_consoles
 import top_global_games
 import top_regional_games
+import old_game_release
+import gaming_genre
+import publisher_impact_on_regions
+import global_average
 
 def main_menu():
     # Preload dataset
@@ -60,19 +64,15 @@ def main_menu():
     elif user_choice == GAMING_GENRES_CHOICE:
         gaming_genre.visualise_gaming_genres(df)
     elif user_choice == PUBLISHER_IMPACT_CHOICE:
-        visualise_publisher_impact_on_regions()
+        publisher_impact_on_regions.visualise_publisher_impact_on_regions(df)
     elif user_choice == GLOBAL_AVERAGE_CHOICE:
-        visualise_global_average()
+        global_average.visualise_global_average(df)
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.
-def visualise_games_old_releases():
-    pass
 
-def visualise_publisher_impact_on_regions():
-    pass
 
-def visualise_global_average():
-    pass
+
+
 
 main_menu()
