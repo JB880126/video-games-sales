@@ -24,9 +24,10 @@ def main_menu():
     GAMING_GENRES_CHOICE = 5
     PUBLISHER_IMPACT_CHOICE = 6
     GLOBAL_AVERAGE_CHOICE = 7
+    EXIT_CHOICE = 8
 
     CHOICE_MINIMUM = 0
-    CHOICE_MAXIMUM = 8
+    CHOICE_MAXIMUM = 9
     choices = tuple(range(CHOICE_MINIMUM, CHOICE_MAXIMUM))
 
     while (1):
@@ -38,6 +39,7 @@ def main_menu():
         print("6. Visualise top gaming genres")
         print("7. Visualise publisher impact on regions")
         print("8. Visualise global averages")
+        print("9. Exit program")
         print()
         user_choice = input("Which choice do you want to pick? ")
         try:
@@ -65,6 +67,9 @@ def main_menu():
             publisher_impact_on_regions.visualise_publisher_impact_on_regions(df)
         elif user_choice == GLOBAL_AVERAGE_CHOICE:
             global_average.visualise_global_average(df)
+        elif user_choice == EXIT_CHOICE:
+            print("Exiting program...")
+            exit()
 
 # Naming convention: Use "visualise" at the start of every
 # function name that performs data visualisation.
